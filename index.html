@@ -822,6 +822,28 @@
             .seccion { margin: 20px 15px; }
             .mensaje-especial { font-size: 1.3rem; }
         }
+        /* Esto ajustará el tamaño del QR */
+#qr-code {
+    margin: 20px auto;
+    padding: 15px;
+    background: white;
+    border-radius: 10px;
+    display: inline-block;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+#qr-code img {
+    width: 200px; /* Ajusta este número según prefieras el tamaño */
+    height: auto;
+    display: block;
+}
+
+/* También asegúrate de que la foto principal no se desborde */
+.foto-principal img {
+    width: 100%;
+    max-height: 600px; /* Evita que sea gigante */
+    object-fit: cover;
+}
     </style>
 </head>
 <body>
@@ -1166,9 +1188,8 @@
 
         function abrirSobre() {
             if (sobreAbierto) return;
-            const contenedor = document.querySelector('.sobre-contenedor');
-            sobreAbierto = true;
-            contenedor.classList.add('abriendo');
+            const musica = document.getElementById('musica');
+    musica.play().catch(error => console.log("El navegador bloqueó el audio inicialmente"));
         }
 
         function iniciarMusica() {
@@ -1283,6 +1304,7 @@
     </script>
 </body>
 </html>
+
 
 
 
