@@ -1036,7 +1036,21 @@
   50% { transform: scale(1.25); }
   100% { transform: scale(1); }
 }
+@media (max-width: 480px) {
+    .vestimenta-box::before {
+        left: 50%;
+        transform: translateX(-120%);
+    }
 
+    .vestimenta-box::after {
+        right: 50%;
+        transform: translateX(120%);
+    }
+
+    .vestimenta-box {
+        padding-top: 75px;
+    }
+}
 
     </style>
 </head>
@@ -1516,6 +1530,7 @@
     </script>
 </body>
 </html>
+
 
 
 
