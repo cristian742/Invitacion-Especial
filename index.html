@@ -822,28 +822,6 @@
             .seccion { margin: 20px 15px; }
             .mensaje-especial { font-size: 1.3rem; }
         }
-        /* Esto ajustará el tamaño del QR */
-#qr-code {
-    margin: 20px auto;
-    padding: 15px;
-    background: white;
-    border-radius: 10px;
-    display: inline-block;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-#qr-code img {
-    width: 200px; /* Ajusta este número según prefieras el tamaño */
-    height: auto;
-    display: block;
-}
-
-/* También asegúrate de que la foto principal no se desborde */
-.foto-principal img {
-    width: 100%;
-    max-height: 600px; /* Evita que sea gigante */
-    object-fit: cover;
-}
     </style>
 </head>
 <body>
@@ -877,7 +855,7 @@
             <h2>¡Mis XV Años!</h2>
             
             <div class="foto-principal">
-                <img src="img.png" alt="Isabela Narvaez -- XV Años">
+                <img src="https://via.placeholder.com/500x600/8a6d8f/ffffff?text=Isabela+Narvaez" alt="Isabela Narvaez - XV Años">
             </div>
 
             <div class="mensaje-especial">
@@ -953,9 +931,7 @@
             <div class="qr-section">
                 <h4>📸 Comparte tus Fotos y Videos</h4>
                 <p style="font-weight: 500;">Escanea el código QR para enviar tus mejores momentos de la fiesta:</p>
-                <div id="qr-code">
-                      <img src="quince.png" alt="Isabela Narvaez -- XV Años"> 
-        </div>
+                <div id="qr-code"></div>
                 <p style="font-size: 1rem; margin-top: 20px; color: var(--color-texto); font-weight: 500;">O envíalos directamente al WhatsApp</p>
             </div>
         </section>
@@ -967,7 +943,7 @@
             <div class="flor-esquina bl">🎀</div>
             <div class="flor-esquina br">🎀</div>
             
-            <a href="https://wa.me/573108940111?text=Hola%20Isabela,%20confirmo%20mi%20asistencia%20a%20tus%2015%20a%C3%B1os" class="btn btn-whatsapp">📱 Confirmar Asistencia por WhatsApp</a>
+            <a href="https://wa.me/573123456789?text=Hola%20Isabela,%20confirmo%20mi%20asistencia%20a%20tus%2015%20a%C3%B1os" class="btn btn-whatsapp">📱 Confirmar Asistencia por WhatsApp</a>
         </section>
 
         <footer>
@@ -1188,8 +1164,9 @@
 
         function abrirSobre() {
             if (sobreAbierto) return;
-            const musica = document.getElementById('musica');
-    musica.play().catch(error => console.log("El navegador bloqueó el audio inicialmente"));
+            const contenedor = document.querySelector('.sobre-contenedor');
+            sobreAbierto = true;
+            contenedor.classList.add('abriendo');
         }
 
         function iniciarMusica() {
@@ -1304,7 +1281,3 @@
     </script>
 </body>
 </html>
-
-
-
-
