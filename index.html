@@ -7,14 +7,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Dancing+Script:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-    --color-principal: #F4A7C1;   /* Rosado medio */
-    --color-secundario: #FADADD; /* Rosado suave */
-    --color-acento: #F8C8DC;     /* Rosado pastel */
-    --color-texto: #8A4A6B;      /* Texto rosado oscuro elegante */
-    --color-dorado: #F4A7C1;     /* Acentos */
-    --color-fondo: #FFF1F5;      /* Fondo muy claro */
+    --color-principal: #F4A7C1;
+    --color-secundario: #FADADD;
+    --color-acento: #F8C8DC;
+    --color-texto: #8A4A6B;
+    --color-dorado: #F4A7C1;
+    --color-fondo: #FFF1F5;
 }
-
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -202,7 +201,7 @@
         }
 
         header {
-            padding: 120px 20px 80px;
+            padding: 140px 20px 80px;
             background: linear-gradient(135deg, var(--color-fondo) 0%, var(--color-secundario) 100%);
             position: relative;
             overflow: hidden;
@@ -217,6 +216,21 @@
             text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
             position: relative;
             display: inline-block;
+        }
+
+        h1::before {
+            content: '👑';
+            position: absolute;
+            top: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 4rem;
+            animation: brillarCorona 2s ease-in-out infinite;
+        }
+
+        @keyframes brillarCorona {
+            0%, 100% { filter: brightness(1) drop-shadow(0 0 5px rgba(244, 167, 193, 0.5)); }
+            50% { filter: brightness(1.3) drop-shadow(0 0 15px rgba(244, 167, 193, 0.8)); }
         }
 
         h1::after {
@@ -239,38 +253,8 @@
             font-style: italic;
         }
 
-        .foto-principal {
-            max-width: 500px;
-            width: 90%;
-            margin: 40px auto;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 15px 40px rgba(138, 109, 143, 0.3);
-            border: 5px solid white;
-            position: relative;
-        }
-
-        .foto-principal::before {
-            content: '';
-            position: absolute;
-            top: -5px;
-            left: -5px;
-            right: -5px;
-            bottom: -5px;
-            background: linear-gradient(45deg, var(--color-principal), var(--color-dorado), var(--color-acento));
-            border-radius: 20px;
-            z-index: -1;
-        }
-
-        .foto-principal img {
-            width: 100%;
-            height: auto;
-            display: block;
-            object-fit: cover;
-        }
-
         .mensaje-especial {
-       background: linear-gradient(135deg, rgba(248, 200, 220, 0.25) 0%, rgba(255, 241, 245, 0.8) 100%);
+            background: linear-gradient(135deg, rgba(248, 200, 220, 0.25) 0%, rgba(255, 241, 245, 0.8) 100%);
             border-left: 5px solid var(--color-principal);
             border-right: 5px solid var(--color-principal);
             padding: 40px 30px;
@@ -285,7 +269,6 @@
             box-shadow: 0 10px 25px rgba(138, 109, 143, 0.1);
         }
 
-        /* SECCIONES SUPER DECORADAS */
         .seccion {
             padding: 60px 20px;
             max-width: 900px;
@@ -298,69 +281,6 @@
             overflow: visible;
         }
 
-        /* LISTONES DECORATIVOS EN LAS ESQUINAS */
-        .seccion::before {
-            content: '🎀';
-            position: absolute;
-            top: -15px;
-            left: 20px;
-            font-size: 3rem;
-            z-index: 10;
-            filter: hue-rotate(320deg);
-            animation: balanceo 3s ease-in-out infinite;
-        }
-
-        .seccion::after {
-            content: '🎀';
-            position: absolute;
-            top: -15px;
-            right: 20px;
-            font-size: 3rem;
-            z-index: 10;
-            filter: hue-rotate(320deg);
-            animation: balanceo 3s ease-in-out infinite;
-            animation-delay: 1.5s;
-        }
-
-        @keyframes balanceo {
-            0%, 100% { transform: rotate(-5deg); }
-            50% { transform: rotate(5deg); }
-        }
-
-        /* FLORES EN LAS ESQUINAS */
-        .flor-esquina {
-            position: absolute;
-            font-size: 2.5rem;
-            z-index: 5;
-            animation: girarFlor 6s linear infinite;
-        }
-
-        .flor-esquina.tl { top: 10px; left: 10px; }
-        .flor-esquina.tr { top: 10px; right: 10px; }
-        .flor-esquina.bl { bottom: 10px; left: 10px; }
-        .flor-esquina.br { bottom: 10px; right: 10px; }
-
-        @keyframes girarFlor {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        /* GUIRNALDA DECORATIVA SUPERIOR */
-        .guirnalda-superior {
-            position: absolute;
-            top: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 2rem;
-            z-index: 10;
-            background: white;
-            padding: 5px 20px;
-            border-radius: 20px;
-            box-shadow: 0 5px 15px rgba(138, 109, 143, 0.2);
-            border: 2px solid var(--color-acento);
-        }
-
-        /* BORDES DECORADOS CON PATRÓN */
         .seccion {
             background: 
                 linear-gradient(45deg, transparent 10px, white 10px),
@@ -613,41 +533,8 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
-        .vestimenta-box {
-            background: linear-gradient(135deg, white 0%, #fff5f9 100%);
-            padding: 40px 30px;
-            border-radius: 15px;
-            margin: 30px 0;
-            box-shadow: 0 10px 25px rgba(138, 109, 143, 0.1);
-            border: 2px solid var(--color-acento);
-            position: relative;
-        }
-
-        .vestimenta-box::before {
-            content: '👗';
-            position: absolute;
-            top: 15px;
-            left: 20px;
-            font-size: 2.5rem;
-        }
-
-        .vestimenta-box::after {
-            content: '👔';
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            font-size: 2.5rem;
-        }
-
-        .vestimenta-box p {
-            font-size: 1.8rem;
-            color: var(--color-principal);
-            font-weight: 600;
-            font-style: italic;
-        }
-
         footer {
-           background: linear-gradient(135deg, #F4A7C1 0%, #F8C8DC 100%);
+            background: linear-gradient(135deg, #F4A7C1 0%, #F8C8DC 100%);
             padding: 80px 20px;
             margin-top: 50px;
             position: relative;
@@ -670,8 +557,6 @@
             margin: 0 auto;
         }
 
-        /* ===== ANIMACIONES DE ELEMENTOS FLOTANTES ===== */
-        
         .elementos-flotantes {
             position: fixed;
             pointer-events: none;
@@ -823,226 +708,215 @@
             .seccion { margin: 20px 15px; }
             .mensaje-especial { font-size: 1.3rem; }
         }
+
         #qr-code img {
-    border-radius: 12px;
-    border: 4px solid var(--color-acento);
-    box-shadow: 0 10px 25px rgba(138, 109, 143, 0.3);
-}
+            border-radius: 12px;
+            border: 4px solid var(--color-acento);
+            box-shadow: 0 10px 25px rgba(138, 109, 143, 0.3);
+        }
+
         .btn-qr-whatsapp {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    width: 220px;
-    height: 220px;
-    margin: 25px auto;
-    background: linear-gradient(135deg, #25d366, #1ebe5d);
-    border-radius: 25px;
-    text-decoration: none;
-    box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4);
-    border: 5px solid white;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.4s ease;
-}
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            width: 220px;
+            height: 220px;
+            margin: 25px auto;
+            background: linear-gradient(135deg, #25d366, #1ebe5d);
+            border-radius: 25px;
+            text-decoration: none;
+            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4);
+            border: 5px solid white;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
 
-.btn-qr-whatsapp::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at top left, rgba(255,255,255,0.35), transparent 60%);
-    opacity: 0;
-    transition: opacity 0.4s;
-}
+        .btn-qr-whatsapp::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at top left, rgba(255,255,255,0.35), transparent 60%);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
 
-.btn-qr-whatsapp:hover::before {
-    opacity: 1;
-}
+        .btn-qr-whatsapp:hover::before {
+            opacity: 1;
+        }
 
-.btn-qr-whatsapp:hover {
-    transform: translateY(-10px) scale(1.05);
-    box-shadow: 0 25px 50px rgba(37, 211, 102, 0.6);
-}
+        .btn-qr-whatsapp:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 25px 50px rgba(37, 211, 102, 0.6);
+        }
 
-.icono-btn {
-    font-size: 3.8rem;
-    animation: pulsoIcono 2s infinite;
-}
+        .icono-btn {
+            font-size: 3.8rem;
+            animation: pulsoIcono 2s infinite;
+        }
 
-@keyframes pulsoIcono {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.15); }
-}
+        @keyframes pulsoIcono {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+        }
 
-.texto-btn {
-    color: white;
-    font-family: 'Quicksand', sans-serif;
-    font-size: 1.2rem;
-    font-weight: 700;
-    text-align: left;
-    line-height: 1.3;
-}
+        .texto-btn {
+            color: white;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-align: left;
+            line-height: 1.3;
+        }
 
-.texto-btn small {
-    font-size: 0.9rem;
-    font-weight: 500;
-    opacity: 0.9;
-}
-/* ===== BOTÓN ROSADO CON CORAZONES ===== */
-.btn-qr-whatsapp.pink {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 14px;
-    width: 220px;
-    height: 220px;
-    margin: 25px auto;
-    background: linear-gradient(135deg, #ff7eb3, #ff4fa3);
-    border-radius: 28px;
-    text-decoration: none;
-    box-shadow: 0 18px 40px rgba(255, 79, 163, 0.45);
-    border: 5px solid #fff;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.45s ease;
-}
+        .texto-btn small {
+            font-size: 0.9rem;
+            font-weight: 500;
+            opacity: 0.9;
+        }
 
-.btn-qr-whatsapp.pink:hover {
-    transform: translateY(-10px) scale(1.06);
-    box-shadow: 0 28px 55px rgba(255, 79, 163, 0.65);
-}
+        .btn-qr-whatsapp.pink {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            width: 220px;
+            height: 220px;
+            margin: 25px auto;
+            background: linear-gradient(135deg, #ff7eb3, #ff4fa3);
+            border-radius: 28px;
+            text-decoration: none;
+            box-shadow: 0 18px 40px rgba(255, 79, 163, 0.45);
+            border: 5px solid #fff;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.45s ease;
+        }
 
-/* brillo suave */
-.btn-qr-whatsapp.pink::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at top left, rgba(255,255,255,.45), transparent 60%);
-    opacity: .9;
-}
+        .btn-qr-whatsapp.pink:hover {
+            transform: translateY(-10px) scale(1.06);
+            box-shadow: 0 28px 55px rgba(255, 79, 163, 0.65);
+        }
 
-/* icono */
-.btn-qr-whatsapp .icono-btn {
-    font-size: 3.8rem;
-    animation: latido 1.8s infinite;
-}
+        .btn-qr-whatsapp.pink::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at top left, rgba(255,255,255,.45), transparent 60%);
+            opacity: .9;
+        }
 
-@keyframes latido {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.18); }
-}
+        .btn-qr-whatsapp .icono-btn {
+            font-size: 3.8rem;
+            animation: latido 1.8s infinite;
+        }
 
-/* texto */
-.btn-qr-whatsapp .texto-btn {
-    color: #fff;
-    font-family: 'Quicksand', sans-serif;
-    font-size: 1.2rem;
-    font-weight: 700;
-    line-height: 1.3;
-    text-align: left;
-}
+        @keyframes latido {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.18); }
+        }
 
-.btn-qr-whatsapp .texto-btn small {
-    font-size: .9rem;
-    font-weight: 500;
-    opacity: .95;
-}
+        .btn-qr-whatsapp .texto-btn {
+            color: #fff;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            line-height: 1.3;
+            text-align: left;
+        }
 
-/* ===== CORAZONES FLOTANDO ===== */
-.btn-qr-whatsapp .heart {
-    position: absolute;
-    font-size: 1.6rem;
-    opacity: 0;
-    animation: subirCorazon 3.5s infinite;
-}
+        .btn-qr-whatsapp .texto-btn small {
+            font-size: .9rem;
+            font-weight: 500;
+            opacity: .95;
+        }
 
-.btn-qr-whatsapp .h1 { left: 15%; animation-delay: 0s; }
-.btn-qr-whatsapp .h2 { left: 45%; animation-delay: 1s; }
-.btn-qr-whatsapp .h3 { left: 70%; animation-delay: 2s; }
-.btn-qr-whatsapp .h4 { left: 85%; animation-delay: 1.5s; }
+        .btn-qr-whatsapp .heart {
+            position: absolute;
+            font-size: 1.6rem;
+            opacity: 0;
+            animation: subirCorazon 3.5s infinite;
+        }
 
-@keyframes subirCorazon {
-    0% {
-        bottom: 10px;
-        opacity: 0;
-        transform: scale(.6);
-    }
-    20% { opacity: .9; }
-    50% { transform: scale(1); }
-    100% {
-        bottom: 110%;
-        opacity: 0;
-        transform: scale(1.3);
-    }
-}
-.btn-confirmar {
-  width: 320px;
-  height: 70px;
-  background: linear-gradient(135deg, #ff7abf, #ff4fa3);
-  border-radius: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  margin: 30px auto 0;
-  text-decoration: none;
-  box-shadow: 0 10px 25px rgba(255, 79, 163, 0.45);
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
+        .btn-qr-whatsapp .h1 { left: 15%; animation-delay: 0s; }
+        .btn-qr-whatsapp .h2 { left: 45%; animation-delay: 1s; }
+        .btn-qr-whatsapp .h3 { left: 70%; animation-delay: 2s; }
+        .btn-qr-whatsapp .h4 { left: 85%; animation-delay: 1.5s; }
 
-.btn-confirmar:hover {
-  transform: scale(1.07);
-  box-shadow: 0 15px 35px rgba(255, 79, 163, 0.6);
-}
+        @keyframes subirCorazon {
+            0% {
+                bottom: 10px;
+                opacity: 0;
+                transform: scale(.6);
+            }
+            20% { opacity: .9; }
+            50% { transform: scale(1); }
+            100% {
+                bottom: 110%;
+                opacity: 0;
+                transform: scale(1.3);
+            }
+        }
 
-.btn-confirmar .text {
-  color: #fff;
-  font-size: 16px;
-  font-weight: 600;
-  white-space: nowrap;
-}
+        .btn-confirmar {
+            width: 320px;
+            height: 70px;
+            background: linear-gradient(135deg, #ff7abf, #ff4fa3);
+            border-radius: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin: 30px auto 0;
+            text-decoration: none;
+            box-shadow: 0 10px 25px rgba(255, 79, 163, 0.45);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
 
-.btn-confirmar .icon {
-  font-size: 22px;
-  animation: latido 1.5s infinite;
-}
+        .btn-confirmar:hover {
+            transform: scale(1.07);
+            box-shadow: 0 15px 35px rgba(255, 79, 163, 0.6);
+        }
 
-/* ✨ Efecto brillo */
-.btn-confirmar::before {
-  content: "";
-  position: absolute;
-  width: 120%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.25);
-  top: 0;
-  left: -130%;
-  transform: skewX(-20deg);
-}
+        .btn-confirmar .text {
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
 
-.btn-confirmar:hover::before {
-  animation: brillo 0.8s forwards;
-}
+        .btn-confirmar .icon {
+            font-size: 22px;
+            animation: latido 1.5s infinite;
+        }
 
-@keyframes brillo {
-  to {
-    left: 130%;
-  }
-}
+        .btn-confirmar::before {
+            content: "";
+            position: absolute;
+            width: 120%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.25);
+            top: 0;
+            left: -130%;
+            transform: skewX(-20deg);
+        }
 
-@keyframes latido {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.25); }
-  100% { transform: scale(1); }
-}
+        .btn-confirmar:hover::before {
+            animation: brillo 0.8s forwards;
+        }
 
-
+        @keyframes brillo {
+            to {
+                left: 130%;
+            }
+        }
     </style>
 </head>
 <body>
 
-  
     <audio id="musica" loop>
         <source src="music.mp3" type="audio/mpeg">
     </audio>
@@ -1069,11 +943,6 @@
         <header>
             <h1>Isabela Narvaez</h1>
             <h2>¡Mis XV Años!</h2>
-            
-           <div class="foto-principal">
-    <img src="imagen.png" alt="Isabela Narvaez - XV Años">
-    </div>
-
 
             <div class="mensaje-especial">
                 Los momentos más especiales se sueñan, se imaginan, se construyen y hoy... el día ha llegado. Lo más importante es que lo compartas conmigo.
@@ -1081,12 +950,6 @@
         </header>
 
         <section class="seccion">
-            <div class="guirnalda-superior">🌸 🎀 🌸</div>
-            <div class="flor-esquina tl">🌺</div>
-            <div class="flor-esquina tr">🌺</div>
-            <div class="flor-esquina bl">🌸</div>
-            <div class="flor-esquina br">🌸</div>
-            
             <h3>Cuenta Regresiva</h3>
             <div id="cuenta-regresiva">
                 <div class="tiempo"><span id="dias">00</span><br><small>Días</small></div>
@@ -1097,12 +960,6 @@
         </section>
 
         <section class="seccion">
-            <div class="guirnalda-superior">🦋 💕 🦋</div>
-            <div class="flor-esquina tl">🌷</div>
-            <div class="flor-esquina tr">🌷</div>
-            <div class="flor-esquina bl">🌼</div>
-            <div class="flor-esquina br">🌼</div>
-            
             <h3>Detalles del Evento</h3>
             <div class="detalles-box">
                 <p><strong>📅 Fecha:</strong> 31 de Enero de 2026</p>
@@ -1113,25 +970,6 @@
         </section>
 
         <section class="seccion">
-            <div class="guirnalda-superior">✨ 👗 ✨</div>
-            <div class="flor-esquina tl">🌻</div>
-            <div class="flor-esquina tr">🌻</div>
-            <div class="flor-esquina bl">💐</div>
-            <div class="flor-esquina br">💐</div>
-            
-            <h3>Código de Vestimenta</h3>
-            <div class="vestimenta-box">
-                <p>_GALA / FORMAL_</p>
-            </div>
-        </section>
-
-        <section class="seccion">
-            <div class="guirnalda-superior">💝 🌹 💝</div>
-            <div class="flor-esquina tl">❤️</div>
-            <div class="flor-esquina tr">❤️</div>
-            <div class="flor-esquina bl">💕</div>
-            <div class="flor-esquina br">💕</div>
-            
             <div class="sobre-regalo">
                 <div class="icono">💝</div>
                 <p><strong>Tu presencia es mi principal regalo,</strong><br>pero también tendré <strong>lluvia de sobres</strong> para quienes deseen compartir su cariño de esa manera.</p>
@@ -1139,48 +977,34 @@
         </section>
 
         <section class="seccion">
-            <div class="guirnalda-superior">📸 🌺 📸</div>
-            <div class="flor-esquina tl">🌸</div>
-            <div class="flor-esquina tr">🌸</div>
-            <div class="flor-esquina bl">🦋</div>
-            <div class="flor-esquina br">🦋</div>
-            
-         <a 
-  href="https://wa.me/573108940111?text=Hola%20Isabela,%20te%20env%C3%ADo%20fotos%20y%20videos%20de%20tus%20XV%20A%C3%B1os%20💖✨" 
-  target="_blank" 
-  class="btn-qr-whatsapp pink"
->
-  <span class="icono-btn">💗</span>
-  <span class="texto-btn">
-    Enviar fotos y videos<br>
-    <small>por WhatsApp</small>
-  </span>
+            <a 
+                href="https://wa.me/573108940111?text=Hola%20Isabela,%20te%20env%C3%ADo%20fotos%20y%20videos%20de%20tus%20XV%20A%C3%B1os%20💖✨" 
+                target="_blank" 
+                class="btn-qr-whatsapp pink"
+            >
+                <span class="icono-btn">💗</span>
+                <span class="texto-btn">
+                    Enviar fotos y videos<br>
+                    <small>por WhatsApp</small>
+                </span>
 
-  <!-- corazones -->
-  <span class="heart h1">💖</span>
-  <span class="heart h2">💕</span>
-  <span class="heart h3">💗</span>
-  <span class="heart h4">💓</span>
-</a>
-       </section>
+                <span class="heart h1">💖</span>
+                <span class="heart h2">💕</span>
+                <span class="heart h3">💗</span>
+                <span class="heart h4">💓</span>
+            </a>
+        </section>
 
-<section class="seccion">
-    <div class="guirnalda-superior">💌 ✨ 💌</div>
-    <div class="flor-esquina tl">💗</div>
-    <div class="flor-esquina tr">💗</div>
-    <div class="flor-esquina bl">🎀</div>
-    <div class="flor-esquina br">🎀</div>
-    
-    <a 
-      href="https://wa.me/573108940111?text=Hola%20Isabela,%20confirmo%20mi%20asistencia%20a%20tus%2015%20años%20💖"
-      class="btn-confirmar"
-      target="_blank"
-    >
-      <span class="icon">💌</span>
-      <span class="text">Confirmar asistencia por WhatsApp</span>
-    </a>
-</section>
-
+        <section class="seccion">
+            <a 
+                href="https://wa.me/573108940111?text=Hola%20Isabela,%20confirmo%20mi%20asistencia%20a%20tus%2015%20años%20💖"
+                class="btn-confirmar"
+                target="_blank"
+            >
+                <span class="icon">💌</span>
+                <span class="text">Confirmar asistencia por WhatsApp</span>
+            </a>
+        </section>
 
         <footer>
             <h2>¡Te espero para celebrar juntos!</h2>
@@ -1257,7 +1081,6 @@
         function crearElementosFlotantes() {
             console.log('Iniciando generación de elementos flotantes');
             
-            // Flores normales - SUPER FRECUENTES
             const flores = ['🌸', '🌺', '🌼', '🌻', '🌷', '💐', '✿', '❀'];
             const intervalo1 = setInterval(() => {
                 const el = document.createElement('div');
@@ -1271,7 +1094,6 @@
             }, 600);
             intervalosActivos.push(intervalo1);
 
-            // Mariposas - SUPER FRECUENTES
             const intervalo2 = setInterval(() => {
                 const mariposa = document.createElement('div');
                 mariposa.className = 'mariposa';
@@ -1283,7 +1105,6 @@
             }, 900);
             intervalosActivos.push(intervalo2);
 
-            // Rosas cayendo - SUPER FRECUENTES
             const intervalo3 = setInterval(() => {
                 const rosa = document.createElement('div');
                 rosa.className = 'rosa';
@@ -1296,7 +1117,6 @@
             }, 700);
             intervalosActivos.push(intervalo3);
 
-            // Corazones volando - SUPER FRECUENTES
             const intervalo4 = setInterval(() => {
                 const corazon = document.createElement('div');
                 corazon.className = 'corazon';
@@ -1309,7 +1129,6 @@
             }, 1100);
             intervalosActivos.push(intervalo4);
 
-            // Flores grandes flotando - FRECUENTES
             const intervalo5 = setInterval(() => {
                 const florGrande = document.createElement('div');
                 florGrande.className = 'flor-grande';
@@ -1321,7 +1140,6 @@
             }, 1500);
             intervalosActivos.push(intervalo5);
 
-            // Crear elementos iniciales inmediatamente
             crearFloresIniciales();
         }
 
@@ -1329,7 +1147,6 @@
             console.log('Creando flores iniciales');
             const flores = ['🌸', '🌺', '🌼', '🌻', '🌷', '💐', '✿', '❀', '🌹'];
             
-            // 30 flores distribuidas
             for (let i = 0; i < 30; i++) {
                 setTimeout(() => {
                     const el = document.createElement('div');
@@ -1343,7 +1160,6 @@
                 }, i * 100);
             }
 
-            // 15 mariposas
             for (let i = 0; i < 15; i++) {
                 setTimeout(() => {
                     const mariposa = document.createElement('div');
@@ -1356,7 +1172,6 @@
                 }, i * 200);
             }
 
-            // 20 corazones
             for (let i = 0; i < 20; i++) {
                 setTimeout(() => {
                     const corazon = document.createElement('div');
@@ -1369,7 +1184,6 @@
                 }, i * 300);
             }
 
-            // 12 rosas
             for (let i = 0; i < 12; i++) {
                 setTimeout(() => {
                     const rosa = document.createElement('div');
@@ -1383,7 +1197,6 @@
                 }, i * 250);
             }
 
-            // 10 flores grandes
             for (let i = 0; i < 10; i++) {
                 setTimeout(() => {
                     const florGrande = document.createElement('div');
@@ -1439,7 +1252,6 @@
                     invitacion.style.opacity = '1';
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                     
-                    // INICIAR GENERACIÓN CONTINUA DE ELEMENTOS
                     console.log('Mostrando invitación - iniciando elementos flotantes');
                     crearElementosFlotantes();
                 }, 50);
@@ -1477,21 +1289,9 @@
             }
         }
 
-        function generarQR() {
-            new QRCode(document.getElementById("qr-code"), {
-                text: "https://wa.me/573123456789?text=¡Hola! Aquí te envío fotos de tu fiesta 📸",
-                width: 180,
-                height: 180,
-                colorDark : "#8a6d8f",
-                colorLight : "#ffffff",
-                correctLevel : QRCode.CorrectLevel.H
-            });
-        }
-
         window.onload = function() {
             crearDecoracionFondo();
             crearElementosFlotantesIniciales();
-            generarQR();
             
             const sobre = document.querySelector('.sobre-contenedor');
             sobre.addEventListener('click', abrirSobre);
@@ -1516,14 +1316,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
